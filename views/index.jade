@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	h1= title
+	div(class="row")
+		div(class="span9")
+			ul(id="console")
+		
+		div(class="span3")
+			form(class="well form-inline")
+				input(id="input-subscribe",class="input-small")
+				input(id="submit-subscribe",type="submit",value="subscribe")
+			form(class="well form-inline")
+				input(id="input-unsubscribe",class="input-small")
+				input(id="submit-unsubscribe",type="submit",value="unsubscribe")
+	
+	script(type="text/javascript",src="/javascripts/jquery-1.7.2.min.js")
+	script(type="text/javascript",src="/socket.io/socket.io.js")
+	script(type="text/javascript",src="/javascripts/main.js")
