@@ -55,16 +55,19 @@ io.sockets.on('connection', function (socket) {
 	});
 		
 	socket.on('subscribe', function(id) {
+		console.log("subscribe "+id);
 		subscriber.subscribe(id);
 	});
 	socket.on('unsubscribe', function(id) {
+		console.log("unsubscribe "+id);
 		subscriber.unsubscribe(id);
 	});
 	socket.on('disconnect', function() {
 		subscriber.close();
 	});
 
-	subscriber.connect("tcp://localhost:8082");
+	subscriber.connect("tcp://localhost:5002");
+	subscriber.subscribe("");
 });
 
 

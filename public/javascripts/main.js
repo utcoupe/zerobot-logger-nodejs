@@ -2,7 +2,7 @@
 $(function () {
 
 var zconsole = new ZeroConsole('#console');
-socket = io.connect('http://localhost');
+socket = io.connect('/');
 socket.on('message', function (data) {
 	zconsole.onNewMsg(data);
 });

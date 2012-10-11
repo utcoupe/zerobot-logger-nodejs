@@ -13,11 +13,8 @@ var RemoteClient = function(identity, bind_addr, remote_id) {
 		for (var i=0; i<arguments.length; i++) {
 			console.log(''+i+' : '+arguments[i].toString());
 		}
-		response = JSON.parse(arguments[1].toString());
-		//console.log(response);
-		self.cb[response.uid](response);
-	})
-	socket.connect(bind_addr);
+	});
+	socket.connect(conn_addr);
 	this.socket = socket;
 	this.cb = {};
 }
